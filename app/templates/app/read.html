@@ -1,0 +1,16 @@
+{% extends 'base.html'%}
+{%block 'title'%}Blog |Post |User {%endblock%}
+{%block main%}
+<div class="card mb-4">
+    <div class="card-header">
+      <p>@{{post.user.first_name |lower}}</p>
+    </div>
+    <div class="card-body">
+      <h6>{{post.title |capfirst}}</h6>
+      <p class="card-text">{{post.content |lower}}</p>
+    </div>
+    <div class="col d-flex justify-content-center">
+        <a href="{%url 'update-page' post.id%}" class="btn btn-danger rounded-pill my-3">Update</a>
+    </div>
+</div>
+{%endblock%}
